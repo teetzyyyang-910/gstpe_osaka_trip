@@ -37,6 +37,7 @@
   .mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
 
   a{color:inherit;}
+  a, button{touch-action:manipulation;}
   :focus-visible{outline:2px solid var(--teal);outline-offset:3px;}
 
   .wrap{max-width:960px;margin:0 auto;padding:0 24px 80px;}
@@ -348,8 +349,9 @@
     width:min(760px, 92vw);max-height:85vh;
     box-shadow:0 20px 60px rgba(0,0,0,0.25);
     background:var(--paper);
-    display:flex;flex-direction:column;
   }
+  .doc-dialog:not([open]){display:none;}
+  .doc-dialog[open]{display:flex;flex-direction:column;}
   .doc-dialog::backdrop{background:rgba(20,22,20,0.55);backdrop-filter:blur(2px);}
   .dialog-head{
     flex-shrink:0;
@@ -364,6 +366,8 @@
     font-size:1rem;line-height:1;display:flex;align-items:center;justify-content:center;
     transition:background 0.15s;flex-shrink:0;
     -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+    position:relative;z-index:5;
   }
   .dialog-close:hover,.dialog-close:active{background:rgba(255,255,255,0.24);}
   .dialog-body{
@@ -470,12 +474,12 @@
     </div>
 
     <div class="quickref">
-      <button class="quickref-btn" data-open="manifestDialog">
+      <button class="quickref-btn" type="button" data-open="manifestDialog" onclick="document.getElementById('manifestDialog').showModal()">
         <span class="qr-icon">🎫</span>
         <span class="qr-text"><strong>交通與票券提醒</strong><span>Visit Japan Web、USJ Pass、麵包超人門票...</span></span>
         <span class="qr-arrow">→</span>
       </button>
-      <button class="quickref-btn" data-open="taxDialog">
+      <button class="quickref-btn" type="button" data-open="taxDialog" onclick="document.getElementById('taxDialog').showModal()">
         <span class="qr-icon">🧾</span>
         <span class="qr-text"><strong>日本退稅新制圖解</strong><span>6格圖解，出境前必看</span></span>
         <span class="qr-arrow">→</span>
@@ -595,10 +599,10 @@
 
   </div>
 
-  <dialog id="manifestDialog" class="doc-dialog">
+  <dialog id="manifestDialog" class="doc-dialog" onclick="if(event.target===this) this.close()">
     <div class="dialog-head">
       <h2>交通與票券提醒</h2>
-      <button class="dialog-close" data-close="manifestDialog" aria-label="關閉">✕</button>
+      <button class="dialog-close" type="button" data-close="manifestDialog" aria-label="關閉" onclick="document.getElementById('manifestDialog').close()">✕</button>
     </div>
     <div class="dialog-body">
     <p style="font-size:0.78rem;color:var(--ink-mute);margin:-8px 0 20px;">依「需要提前處理的急迫程度」排序，越前面越建議早點確認。</p>
@@ -675,10 +679,10 @@
     </div>
   </dialog>
 
-  <dialog id="taxDialog" class="doc-dialog">
+  <dialog id="taxDialog" class="doc-dialog" onclick="if(event.target===this) this.close()">
     <div class="dialog-head">
       <h2>官方公告 — Tax Refund Guide</h2>
-      <button class="dialog-close" data-close="taxDialog" aria-label="關閉">✕</button>
+      <button class="dialog-close" type="button" data-close="taxDialog" aria-label="關閉" onclick="document.getElementById('taxDialog').close()">✕</button>
     </div>
     <div class="dialog-body">
     <div class="notice">
