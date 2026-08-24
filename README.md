@@ -1,0 +1,1 @@
+# gstpe_osaka_trip
