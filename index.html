@@ -46,44 +46,51 @@
   .hero{
     background:var(--ink);
     color:var(--paper);
-    padding:56px 0 0;
+    padding:20px 0 0;
     position:relative;
     overflow:hidden;
   }
-  .hero-inner{max-width:960px;margin:0 auto;padding:0 24px 44px;position:relative;z-index:2;}
+  .hero-inner{max-width:960px;margin:0 auto;padding:0 24px 16px;position:relative;z-index:2;}
   .hero-eyebrow{
     display:flex;align-items:center;gap:10px;
     font-family:'JetBrains Mono',monospace;
-    font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;
-    color:#B9C4BC;margin-bottom:22px;
+    font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;
+    color:#B9C4BC;margin-bottom:10px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   }
-  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--red);}
+  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;}
+  .hero-eyebrow .full-label{display:inline;}
+  .hero-eyebrow .short-label{display:none;}
+  @media (max-width:480px){
+    .hero-eyebrow .full-label{display:none;}
+    .hero-eyebrow .short-label{display:inline;}
+  }
   .hero h1{
     font-family:'Space Grotesk',sans-serif;
     font-weight:700;
-    font-size:clamp(2.4rem, 6vw, 3.6rem);
-    margin:0 0 6px;
+    font-size:clamp(1.7rem, 5vw, 2.5rem);
+    margin:0 0 10px;
     letter-spacing:-0.01em;
   }
   .hero h1 .cjk{font-family:'Noto Sans TC',sans-serif;font-weight:900;}
   .hero .route-line{
-    display:flex;align-items:center;gap:14px;
-    margin:20px 0 30px;
+    display:flex;align-items:center;gap:12px;
+    margin:0 0 14px;
     font-family:'JetBrains Mono',monospace;
-    font-size:0.95rem;
+    font-size:0.82rem;
     color:#CFD8CF;
   }
   .hero .route-line .city{color:var(--paper);font-weight:600;}
-  .hero .route-line .path{flex:1;height:1px;background:repeating-linear-gradient(90deg,#5B655D 0 6px,transparent 6px 12px);min-width:40px;position:relative;}
-  .hero .route-line .path::after{content:"✈";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-size:0.85rem;}
+  .hero .route-line .path{flex:1;height:1px;background:repeating-linear-gradient(90deg,#5B655D 0 6px,transparent 6px 12px);min-width:30px;max-width:120px;position:relative;}
+  .hero .route-line .path::after{content:"✈";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-size:0.78rem;}
   .hero-meta{
-    display:grid;grid-template-columns:repeat(3,auto);gap:32px;
-    padding-top:26px;border-top:1px solid #38423C;
+    display:grid;grid-template-columns:repeat(3,auto);gap:24px;
+    padding-top:10px;border-top:1px solid #38423C;
   }
-  .hero-meta div{display:flex;flex-direction:column;gap:4px;}
-  .hero-meta .k{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;color:#8C978D;text-transform:uppercase;}
-  .hero-meta .v{font-size:1.02rem;font-weight:500;color:var(--paper);}
-  @media (max-width:600px){.hero-meta{grid-template-columns:1fr 1fr;gap:20px 28px;}}
+  .hero-meta div{display:flex;flex-direction:column;gap:2px;}
+  .hero-meta .k{font-family:'JetBrains Mono',monospace;font-size:0.64rem;letter-spacing:0.12em;color:#8C978D;text-transform:uppercase;}
+  .hero-meta .v{font-size:0.92rem;font-weight:500;color:var(--paper);}
+  @media (max-width:600px){.hero-meta{grid-template-columns:1fr 1fr;gap:12px 24px;}}
 
   .perforation{
     height:22px;
@@ -393,7 +400,7 @@
 
   <div class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow"><span class="dot"></span>PEACH AVIATION · MM24 / MM27 · TRAVEL DOSSIER</div>
+      <div class="hero-eyebrow"><span class="dot"></span><span class="full-label">PEACH AVIATION · MM24 / MM27 · TRAVEL DOSSIER</span><span class="short-label">PEACH AVIATION · MM24/MM27</span></div>
       <h1><span class="cjk">大阪</span> 5<span class="cjk">天</span>4<span class="cjk">夜</span></h1>
       <div class="route-line">
         <span class="city">TPE 桃園</span>
