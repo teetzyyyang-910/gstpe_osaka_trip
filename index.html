@@ -355,14 +355,24 @@
   /* ---------------- Dialogs (modal) ---------------- */
   .doc-dialog{
     border:none;border-radius:18px;padding:0;
-    width:min(760px, 92vw);max-height:85vh;
+    width:min(760px, 92vw);
+    height:85vh;height:85dvh;
+    max-height:85vh;max-height:85dvh;
     box-shadow:0 20px 60px rgba(0,0,0,0.25);
     background:var(--paper);
   }
   #subwayDialog{width:min(1000px, 96vw);}
   @media (max-width:600px){
-    .doc-dialog{width:95vw;}
-    #subwayDialog{width:98vw;max-height:90vh;}
+    .doc-dialog{
+      width:95vw;
+      height:85vh;height:85dvh;
+      max-height:85vh;max-height:85dvh;
+    }
+    #subwayDialog{
+      width:98vw;
+      height:90vh;height:90dvh;
+      max-height:90vh;max-height:90dvh;
+    }
   }
   .doc-dialog:not([open]){display:none;}
   .doc-dialog[open]{display:flex;flex-direction:column;}
