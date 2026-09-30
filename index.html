@@ -359,6 +359,11 @@
     box-shadow:0 20px 60px rgba(0,0,0,0.25);
     background:var(--paper);
   }
+  #subwayDialog{width:min(1000px, 96vw);}
+  @media (max-width:600px){
+    .doc-dialog{width:95vw;}
+    #subwayDialog{width:98vw;max-height:90vh;}
+  }
   .doc-dialog:not([open]){display:none;}
   .doc-dialog[open]{display:flex;flex-direction:column;}
   .doc-dialog::backdrop{background:rgba(20,22,20,0.55);backdrop-filter:blur(2px);}
@@ -384,8 +389,12 @@
     padding:20px 22px 28px;
   }
   .dialog-body .manifest{border:none;}
-  .subway-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
-  .subway-wrap img{display:block;min-width:900px;width:100%;height:auto;}
+  .subway-wrap{width:100%;overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line-strong);border-radius:8px;}
+  .subway-wrap img{display:block;width:100%;height:auto;}
+  @media (min-width:601px){
+    .subway-wrap img{min-width:900px;}
+  }
+  #subwayDialog .dialog-body{padding:16px;}
   .dialog-body .manifest-item{padding:16px 6px;}
   .dialog-body .notice{border:none;padding:0;}
   .dialog-body p.intro-note{margin:0 0 16px;}
@@ -562,8 +571,9 @@
             <div class="theme">大阪環球影城 USJ</div>
           </div>
           <div class="agenda">
-            <div class="agenda-row"><div class="time">08:30</div><div class="what"><b>開園前抵達</b><div class="meta"><a class="badge subway" href="https://www.google.com/maps/dir/?api=1&origin=%E5%A4%A7%E5%92%8CROYNETPREMIER%E5%A4%A7%E9%98%AA%E5%A0%BA%E7%AD%8B%E6%9C%AC%E7%94%BA%E3%83%9B%E3%83%86%E3%83%AB&destination=%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B5%E3%83%AB%E3%83%BB%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3&travelmode=transit" target="_blank" rel="noopener">🚇 環球影城站（ユニバーサルシティ）</a><span class="badge hours">⏰ 依官網當日公告</span></div><span>建議先衝哈利波特魔法世界；地鐵中央線→弁天町轉JR大阪環状線→西九条轉JRゆめ咲線，約35-40分</span></div></div>
-            <div class="agenda-row"><div class="time">09:00</div><div class="what"><b>園區整日遊玩</b><span>超級任天堂世界・建議買快速通關；<strong>午餐建議避開12:00–13:00尖峰</strong>，可用官方App行動點餐，或提早/延後用餐時間</span></div></div>
+            <div class="agenda-row"><div class="time">07:10</div><div class="what"><b>出發前往環球影城</b><div class="meta"><a class="badge subway" href="https://www.google.com/maps/dir/?api=1&origin=%E5%A4%A7%E5%92%8CROYNETPREMIER%E5%A4%A7%E9%98%AA%E5%A0%BA%E7%AD%8B%E6%9C%AC%E7%94%BA%E3%83%9B%E3%83%86%E3%83%AB&destination=%E3%83%A6%E3%83%8B%E3%83%90%E3%83%BC%E3%82%B5%E3%83%AB%E3%83%BB%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3&travelmode=transit" target="_blank" rel="noopener">🚇 環球影城站（ユニバーサルシティ）</a></div><span>地鐵中央線→弁天町轉JR大阪環状線→西九条轉JRゆめ咲線，約35-40分</span></div></div>
+            <div class="agenda-row"><div class="time">07:45</div><div class="what"><b>提早排隊等開園</b><div class="meta"><span class="badge hours">⏰ 依官網當日公告，實際常提早15-30分開園</span></div><span>建議先衝超級任天堂世界／哈利波特魔法世界；想拿超級任天堂世界入場整理券，熱門日整理券發放很快就發完，建議開園前1.5-2小時到場排隊</span></div></div>
+            <div class="agenda-row"><div class="time">08:45</div><div class="what"><b>園區整日遊玩</b><span>超級任天堂世界・建議買快速通關；<strong>午餐建議避開12:00–13:00尖峰</strong>，可用官方App行動點餐，或提早/延後用餐時間</span></div></div>
             <div class="agenda-row"><div class="time"></div><div class="what"><b>當期主題活動</b><span class="choice"><span class="choice-opt">萬聖節「ハロウィーン・ホラー・ナイト」(9/11–11/8，剛好搭上尾聲，新鬼屋「惡靈古堡」、大量殭屍佔領園區)</span><span class="choice-opt">USJ 25週年慶典(全年，Pikachu/Mario遊行)</span><span class="choice-opt">超級任天堂世界5週年慶</span><span class="choice-opt">葬送的芙莉蓮聯動活動</span></span></div></div>
             <div class="agenda-row"><div class="time">18:30</div><div class="what"><b>晚餐</b><div class="meta"><span class="badge walk">🚶 樂園門口即達</span><span class="badge hours">⏰ CityWalk約11:00–23:00</span></div><span class="choice"><span class="choice-opt">CityWalk享用：TAKOPA(集合人氣章魚燒名店)或美式主題餐廳/32樓景觀自助餐，吃飽再回市區</span><span class="choice-or">或</span><span class="choice-opt">先搭車返回市區，在飯店附近超商買熟食，簡單方便、體力有限時更輕鬆</span></span><span style="display:block;margin-top:6px;color:var(--ink-mute);font-size:0.82rem;">CityWalk是園區出口直達的購物美食街Universal CityWalk Osaka，40多家餐廳</span></div></div>
             <div class="agenda-row"><div class="time">20:00</div><div class="what"><b>返回市區</b><div class="meta"><span class="badge subway">🚇 原路搭乘JR＋地鐵</span></div><span>結束充實的一天，返回市區約35-40分鐘</span></div></div>
